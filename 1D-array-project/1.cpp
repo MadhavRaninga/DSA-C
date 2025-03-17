@@ -14,13 +14,12 @@ int main(){
         cout <<"box[" <<i << "] = ";
         cin >> box[i];
     }
-    int min = 0;
+    int min ;
     for (int i = 0; i < user; i++)
     {
        if (min > box[i])
        {
-        min = box[i];
-
+         min = box[i];
        }
        
     }

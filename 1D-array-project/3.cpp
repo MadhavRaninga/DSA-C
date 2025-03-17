@@ -19,8 +19,4 @@ int main(){
       cout << box[user - 1 - i] << " ";
 
     }
-
-  
-
-
 }

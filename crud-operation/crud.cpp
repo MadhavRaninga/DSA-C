@@ -5,7 +5,6 @@ int main(){
 
     int user , size = 0;
     int box[size];
-
     do
     {    
     cout << "1. Create." << endl;
