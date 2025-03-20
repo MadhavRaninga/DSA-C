@@ -1,20 +1,22 @@
 #include<iostream>
 using namespace std;
 
-int sum(int a, int b){
-    
-   
-   if (a  < b)
-   {
-     cout << "first is min. ";
-   }
-   else{
-    cout << "second is min. ";
-    
-   }
+int evenOdd(){
+    int user;
+
+    cout << "Enter the value = ";
+    cin >> user;
+
+    if (user %2 == 0)
+    {
+        cout << user << " is even value.";
+    }
+    else{
+        cout << user << " is odd value.";
+    }
+    return 0;
 }
 int main()
 {
-   sum(210,15);
-    
+    evenOdd();
 }

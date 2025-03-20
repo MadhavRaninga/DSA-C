@@ -1,11 +1,22 @@
 #include<iostream>
 using namespace std;
 
-void hello(){
-    cout << "Hello World!" ;
+int sum(){
+    int a , b ;
+
+    cout << "Enter the value = ";
+    cin >> a;
+
+    cout << "Enter the value = ";
+    cin >> b;
+
+    
+    return a + b;
+    cout << endl;
 }
 int main()
 {
-    hello();
-    
+   int result = sum();
+   cout << "Sum = " << result ;
+   
 }
