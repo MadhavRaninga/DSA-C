@@ -65,7 +65,6 @@ public:
         cout << "-------------------------" << endl;
     }
 };
-
 class Checkingaccount : public bankAccount{
 public:
     int overdraftLimit;
