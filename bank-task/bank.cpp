@@ -86,7 +86,6 @@ public:
         cout << "-------------------------" << endl;
     }
 };
-
 class FixedDepositAccount : public bankAccount{
 public:
     double term;
@@ -103,7 +102,6 @@ public:
         } else {
             cout << "Enfluence Balance !" << endl;
         }
-
         cout << "-------------------------" << endl;
     }
 };
@@ -120,7 +118,6 @@ int main(){
     cin >> accountHolderName;
     cout << "Enter balance : ";
     cin >> balance;
-
     cout << "-------------------------" << endl;
 
     Savingaccount bacc;
@@ -152,7 +149,6 @@ int main(){
                 cin >> amount;
                 bacc.deposit(amount);
                 break;
-
             case 3:
                 cout << "Enter amount to withdraw : ";
                 cin >> withdrawAmount;
