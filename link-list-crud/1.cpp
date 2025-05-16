@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 struct node
 {
 public:
@@ -29,8 +30,9 @@ void start(int val, node *&head)
     }
 }
 
-void anypos(node *&head, int matchval, int val)
+void anypos(node *&head, int matchval)
 {
+    int val;
     node *temp = head;
     while (temp != NULL)
     {
@@ -77,7 +79,8 @@ void read(node *head)
     cout << "----------------------------------" << endl;
 }
 
-void update(node *&head, int matchval, int val){
+void update(node *&head, int matchval, int val)
+{
     node *temp = head;
     while (temp != NULL)
     {
@@ -89,28 +92,45 @@ void update(node *&head, int matchval, int val){
         temp = temp->next;
     }
 }
-
-void remove(node *&head, int matchval){
-    if (head->data == matchval)
+void remove(node *&head)
+{
+    if (head == NULL)
     {
-        node *temp = head;
-        head = head ->next;
-        delete temp;
-        cout << "Value is Deleted.." << endl;
+        cout << "List is empty. Nothing to delete." << endl;
+        return;
+    }
+
+    int delVal;
+    cout << "Enter the value to delete: ";
+    cin >> delVal;
+
+
+    if (head->data == delVal)
+    {
+        node *toDelete = head;
+        head = head->next;
+        delete toDelete;
+        cout << "Node deleted." << endl;
+        return;
     }
     node *temp = head;
-    node *prev = NULL;
-    while (temp!= NULL && temp->data == matchval)
+    while (temp->next != NULL && temp->next->data != delVal)
     {
-            prev = temp;
-            temp = temp->next;  
+        temp = temp->next;
     }
-    prev->next = temp->next;
-    delete temp;
-    cout << "Value is Deleted.." << endl;
 
+    if (temp->next == NULL)
+    {
+        cout << "Value not found." << endl;
+    }
+    else
+    {
+        node *toDelete = temp->next;
+        temp->next = temp->next->next;
+        delete toDelete;
+        cout << "Node deleted." << endl;
+    }
 }
-
 int main()
 {
     int user, userval, match;
@@ -148,11 +168,11 @@ int main()
                 start(userval, head);
                 break;
             case 2:
-                
+
                 cout << "Enter value that insert after that value = ";
                 cin >> match;
 
-                anypos(head, match, userval);
+                anypos(head, match);
                 break;
             case 3:
                 cout << "Enter the value : ";
@@ -176,9 +196,7 @@ int main()
             update(head, match, userval);
             break;
         case 4:
-        cout << "Enter the value that Delete = ";
-        cin >> match;
-            remove(head, match);
+           remove(head);
             break;
         case 0:
 
